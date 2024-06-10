@@ -1,8 +1,7 @@
-import { useActionState } from "react";
-import "./App.css";
+import UseActionState from "./UseActionState";
 
-function UseActionState() {
-  const [likeCount, onClick, isPending] = useActionState(async () => {
+function Form() {
+  const [likeCount, onClick, isPending] = UseActionState(async () => {
     const response = await fetch("https://example.com/like", {
       method: "POST",
       headers: {
@@ -17,14 +16,14 @@ function UseActionState() {
   console.log("🚀 ~ App ~ isPending:", isPending, "\nlikeCount:", likeCount);
 
   return (
-    <>
+    <form action={onClick}>
       <strong>Like: {likeCount}</strong>
       <hr />
       <button onClick={onClick} disabled={isPending}>
         Like
       </button>
-    </>
+    </form>
   );
 }
 
-export default UseActionState;
+export default Form;

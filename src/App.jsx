@@ -4,7 +4,7 @@ import "./App.css";
 function App() {
   const [likeCount, setLikeCount] = useState(0);
   const [isPending, startTransition] = useTransition();
-  console.log("🚀 ~ App ~ isPending:", isPending);
+  console.log("🚀 ~ App ~ isPending:", isPending, "\nlikeCount:", likeCount);
 
   const onClick = async () => {
     startTransition(async () => {
