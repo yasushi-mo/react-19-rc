@@ -10,4 +10,8 @@ export const handlers = [
       lastName: "Maverick",
     });
   }),
+  http.post("https://example.com/like", async ({ request }) => {
+    const requestJson = await request.json();
+    return HttpResponse.json({ likeCount: requestJson.likeCount + 1 });
+  }),
 ];
