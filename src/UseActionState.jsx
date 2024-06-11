@@ -13,7 +13,7 @@ function UseActionState() {
     });
     const jsonResponse = await response.json();
     return jsonResponse.likeCount;
-  });
+  }, 0);
   console.log("🚀 ~ App ~ isPending:", isPending, "\nlikeCount:", likeCount);
 
   return (
