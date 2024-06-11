@@ -1,7 +1,6 @@
 import { useActionState } from "react";
-import "./App.css";
 
-function UseActionState() {
+function FormWithUseActionState() {
   const [likeCount, onClick, isPending] = useActionState(async () => {
     const response = await fetch("https://example.com/like", {
       method: "POST",
@@ -17,14 +16,14 @@ function UseActionState() {
   console.log("🚀 ~ App ~ isPending:", isPending, "\nlikeCount:", likeCount);
 
   return (
-    <>
+    <form action={onClick}>
       <strong>Like: {likeCount}</strong>
       <hr />
-      <button onClick={onClick} disabled={isPending}>
+      <button type="submit" disabled={isPending}>
         Like
       </button>
-    </>
+    </form>
   );
 }
 
-export default UseActionState;
+export default FormWithUseActionState;
