@@ -28,5 +28,8 @@
     "workerDirectory": [
       "public"
     ]
+  },
+  "volta": {
+    "node": "20.14.0"
   }
 }
