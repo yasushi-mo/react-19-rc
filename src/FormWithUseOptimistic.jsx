@@ -1,8 +1,8 @@
 import { useActionState, useOptimistic } from "react";
 
-function UseOptimistic() {
+function FormWithUseOptimistic() {
   const [likeCount, onClick, isPending] = useActionState(async () => {
-    addOptimistic(1);
+    addOptimistic(likeCount + 1);
     const response = await fetch("https://example.com/like", {
       method: "POST",
       headers: {
@@ -31,14 +31,14 @@ function UseOptimistic() {
   );
 
   return (
-    <>
+    <form action={onClick}>
       <strong>Like: {optimisticLikeCount}</strong>
       <hr />
-      <button onClick={onClick} disabled={isPending}>
+      <button type="submit" disabled={isPending}>
         Like
       </button>
-    </>
+    </form>
   );
 }
 
-export default UseOptimistic;
+export default FormWithUseOptimistic;
