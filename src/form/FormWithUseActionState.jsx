@@ -1,7 +1,7 @@
 import { useActionState } from "react";
 
 function FormWithUseActionState() {
-  const [likeCount, onClick, isPending] = useActionState(async () => {
+  const [likeCount, formAction, isPending] = useActionState(async () => {
     const response = await fetch("https://example.com/like", {
       method: "POST",
       headers: {
@@ -16,7 +16,7 @@ function FormWithUseActionState() {
   console.log("🚀 ~ App ~ isPending:", isPending, "\nlikeCount:", likeCount);
 
   return (
-    <form action={onClick}>
+    <form action={formAction}>
       <strong>Like: {likeCount}</strong>
       <hr />
       <button type="submit" disabled={isPending}>
