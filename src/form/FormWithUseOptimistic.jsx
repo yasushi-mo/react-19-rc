@@ -25,10 +25,10 @@ function FormWithUseOptimistic() {
         "🚀 ~ App ~ \ncurrentLikeCount:",
         currentLikeCount,
         "\noptimisticValue:",
-        optimisticValue
+        optimisticValue,
       );
       return optimisticValue;
-    }
+    },
   );
   console.log(
     "🚀 ~ App ~ isPending:",
@@ -36,7 +36,7 @@ function FormWithUseOptimistic() {
     "\noptimisticLikeCount:",
     optimisticLikeCount,
     "\nlikeCount:",
-    likeCount
+    likeCount,
   );
 
   return (
