@@ -1,3 +1,4 @@
-# react-msw-rest
+# react-19-rc
+Let's try React 19 new functions
 
-React app for testing Mock Service Worker REST API in a browser environment
+using testing Mock Service Worker REST API in a browser environment
